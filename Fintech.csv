@@ -1,0 +1,11 @@
+document_id,document_title,content
+1,"Refund Policy (7 Days)","Our official policy states that refunds should be processed within 7 days of the transaction date..."
+2,"Refund Policy (14 Days)","In some cases, refunds may take up to 14 days to be fully processed..."
+3,"Transaction Fees","A standard fee of 2% is charged for each transaction..."
+4,"Transaction Fees - Alternate","For certain promotional campaigns, the transaction fee may be 3% or waived entirely..."
+5,"Reconciliation FAQ","To reconcile daily transactions, pull the transaction logs from the payment gateway..."
+6,"Reconciliation Edge Cases","For edge cases, such as missing or duplicate entries, cross-reference user IDs and timestamps..."
+7,"Data Privacy Overview","All personally identifiable information is stored in an encrypted database..."
+8,"Data Sharing Consent","Users must provide consent for data to be shared with third-party analytics platforms..."
+9,"Overdraft Policy","If an account goes negative, we may still process transactions up to a predefined overdraft limit..."
+10,"Dispute Resolution","In case of a disputed transaction, users should provide the transaction ID for resolution..."
