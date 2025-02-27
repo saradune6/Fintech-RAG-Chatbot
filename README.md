@@ -1,6 +1,6 @@
 # FinRAGBot - Fintech RAG Chatbot
-![FinRAGBot](Screenshot 2025-02-27 at 5.21.58 PM.png)
-![FinRAGBOT](Screenshot 2025-02-27 at 5.23.26 PM.png)
+![FinRAGBot](1.png)
+![FinRAGBOT](2.png)
 
 
 ## Overview
