@@ -8,16 +8,13 @@ from dotenv import load_dotenv
 import os
 import pickle
 
-# Load environment variables
 load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
 
-# Function to load documents from CSV
 def load_documents():
     loader = CSVLoader(file_path="Fintech.csv", source_column="content")
     return loader.load()
 
-# Function to create or load FAISS vector store
 def get_vector_store(docs):
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     vector_store_path = "faiss_store.pkl"
@@ -31,7 +28,6 @@ def get_vector_store(docs):
         pickle.dump(vector_store, f)
     return vector_store
 
-# Function to set up the RAG pipeline
 def setup_rag(vector_store):
     llm = ChatGroq(model_name="llama3-8b-8192", groq_api_key=groq_api_key)
     retriever = vector_store.as_retriever()
@@ -41,20 +37,16 @@ def setup_rag(vector_store):
         return_source_documents=False
     )
 
-# Streamlit UI Setup
 st.title("Fintech RAG Chatbot")
-st.write("Ask any fintech-related question, and I'll do my best to help!")
+st.write("Ask any fintech-related question: ")
 
-# Initialize chat history
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
-# Load data and models
 docs = load_documents()
 vector_store = get_vector_store(docs)
 qa_chain = setup_rag(vector_store)
 
-# User query input
 user_query = st.text_input("Enter your question below:")
 if user_query:
     response = qa_chain.invoke({
